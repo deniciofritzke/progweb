@@ -1,0 +1,25 @@
+@charset "ISO-8859-1";
+body	{
+		font-family: "Arial",	"Helvetica",	sans-serif;
+}
+p	{
+		line-height: 18px;
+		letter-spacing: 3px;
+		word-spacing: 5px;
+		text-indent: 30px;
+		padding: 10px;
+		text-align: right;
+}
+#imagem_tsi {
+	float: right;
+	margin: 0 0 10px 10px;
+	height: 300px;
+}
+#texto {
+	width: 80%;
+	margin: 0 auto;
+	align-items: center;
+}
+img {
+	border: 1px solid black;
+}

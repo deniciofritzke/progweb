@@ -1,0 +1,29 @@
+#idTitulo {
+    width: 100%;
+    height: 250px;
+    background-image: url('https://www.radioclubedecanoinhas.com.br/wp-content/uploads/sites/721/2019/12/16cd3c7c2bb20d6464e0163c547ed73b.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+}
+
+#idHr {
+    border: 0;
+    border-top: 1px;
+    height: 50px;
+}
+
+body {
+    background-color: #97d4f0;
+}
+
+.div_combo {
+    height: 30px;
+    width: auto;
+}
+
+.tituloDiv {
+    font-style: oblique;
+    font-size: large;
+}

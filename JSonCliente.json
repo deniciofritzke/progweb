@@ -1,0 +1,50 @@
+Estrutura JSon do cacastro de clientes
+--------------------------------------
+{
+	"cli_codigo": 1,                                                  // Opcional; banco cria código automaticamente
+	"cli_nome": "Nome do cliente",
+	"cli_documento": "deve ser CNPJ ou CPF",                          // Pessoa jurídica ou física. Sem caracteres de formatação
+	"enderecos": [                                                    // Conjunto de endereços. Pode haver mais de um. Exemplo: Residencial, comercial, etc.
+		{
+			"end_codigo": 1,                                          // Precisa existir na tabela endereco. A tabela endereco contém uma lista de ruas já cadastradas.
+			"end_tipo_cod": 1,                                        // Precisa existir na tabela tipo_endereco. A tabela tipo_endereco contém uma lista de tipos de endereços: Residencial; Comercial; Outros.
+			"cli_endereco_numero": "Sem número",                      // É o número da rua/avenida/estrada/rodovia/etc...
+			"cli_endereco_complemento": "complemento do endereço"     // Complemento do endereço. Apartamento; Andar; Casa; etc...
+		}
+	],
+	"telefones" : [                                                   // Conjunto de telefones. Pode haver mais de um. Exemplo: Residencial, comercial, celular, contato, etc.
+		{
+			"tel_tipo_cod": 1,                                        // Precisa existir na tabela tipo_telefone. A tabela tipo_telefone contém uma lista de tipo de contatos via telefone: Fixo; Celular; Comercial.
+			"cli_telefone_ddd": 47,                                   // DDD
+			"cli_telefone_numero": "3337-0000"                        // Número do telefone. Informar com a máscara.
+		}
+	]
+}
+
+
+
+
+{
+	"cli_codigo": 1,
+	"cli_nome": "Antônio Nunes",
+	"cli_documento": "12144780000192",
+	"enderecos": [
+		{
+			"end_codigo": 1,
+			"end_tipo_cod": 1,
+			"cli_endereco_numero": "S/N",
+			"cli_endereco_complemento": "Próximo à Igreja Matriz"
+		},
+		{
+			"end_codigo": 12,
+			"end_tipo_cod": 4,
+			"cli_endereco_numero": "1088",
+			"cli_endereco_complemento": ""
+		}
+	],
+	"telefones" : {
+		"tel_tipo_cod": 1,
+		"cli_telefone_ddd": 47,
+		"cli_telefone_numero": "3337-0000"
+	}
+}

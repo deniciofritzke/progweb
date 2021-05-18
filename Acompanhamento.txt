@@ -1,0 +1,37 @@
+usuário PostgreSql: postgres
+senha PostgreSql: asdqwe
+porta 5432
+
+Back-end
+Páginas dinâmicas.
+NodeJS
+Javascript
+Go golang
+
+
+
+
+
+NodeJS
+-----------
+npm --version           // Mostra versão instalada do Node.js
+npm init -y             // Cria arquivo package.json
+npm install express     // Instalação do pacote express
+npm install nodemoon    // instala nodemon -> recarrega a página automática.
+
+
+
+fim = (ini + n) % tam
+
+fim = (0 + 3) mod 5 
+
+Senha usuário rhnetsocial ubuntu
+AsdQwe#33@22
+
+
+trabalho ProgWeb
+NoSQL
+Histórico, contexto, aplicação, utilização
+
+Explicação Grafos
+https://www.youtube.com/watch?v=-QAPNneX16o

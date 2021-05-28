@@ -14,8 +14,8 @@ exports.deleteLivro = (livroID) => {
 
 exports.saveLivro = (livro) => {
 
-    if (livro.liv_codigo > 0) {
-        return database.one('update livro set edi_codigo = $1, liv_descricao = $2, liv_assunto = $3, liv_autor = $4, liv_isbn = $5 where liv_codigo = $6',
+    if (livro.liv_codigo && livro.liv_codigo > 0) {
+        return database.none('update livro set edi_codigo = $1, liv_descricao = $2, liv_assunto = $3, liv_autor = $4, liv_isbn = $5 where liv_codigo = $6',
         [livro.edi_codigo, livro.liv_descricao, livro.liv_assunto, livro.liv_autor, livro.liv_isbn, livro.liv_codigo]);
     }
     else {

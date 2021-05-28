@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Routes from './routes';
+// import Teste from './paginas/Teste';
+/*import HelloMessage from './HelloMessage';*/
+/*import App from './App';*/
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  /*<HelloMessage name="Denicio Fritzke" />,*/
+  /*<App />,*/
+  // <Teste />,
+  <Routes />,
   document.getElementById('root')
 );
 

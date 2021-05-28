@@ -5,7 +5,7 @@ const livroService = require('../service/livroService');
 
 router.get('/livros', async function (req, res) {
     const livros = await livroService.getLivros();
-    res.json(books);
+    res.status(200).json(livros);
 });
 
 router.get('/livro/:id', async function (req, res) {

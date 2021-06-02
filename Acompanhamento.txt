@@ -17,13 +17,16 @@ NodeJS
 npm --version           // Mostra versão instalada do Node.js
 npm init -y             // Cria arquivo package.json
 npm install express     // Instalação do pacote express
-npm install nodemoon    // instala nodemon -> recarrega a página automática.
+npm install nodemon     // instala nodemon -> recarrega a página automática.
 
 
 
 fim = (ini + n) % tam
 
 fim = (0 + 3) mod 5 
+
+Ubuntu Denicio
+asdqwe3322
 
 Senha usuário rhnetsocial ubuntu
 AsdQwe#33@22
@@ -35,3 +38,11 @@ Histórico, contexto, aplicação, utilização
 
 Explicação Grafos
 https://www.youtube.com/watch?v=-QAPNneX16o
+
+App Nike com SGBD Amazon Neptune
+https://www.youtube.com/watch?v=ZCj2wuKBBu4
+
+
+echo "export SECURITY_GROUP_ID=sg-035b8ddaff9d66b26" >> env.sh && source env.sh
+
+echo "export NEPTUNE_ENDPOINT=recomendacoes-instance-1.cg1so5wmbr2w.us-east-2.neptune.amazonaws.com" >> env.sh

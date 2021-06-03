@@ -1,14 +1,15 @@
-import React from 'react';
-import {BrowserRouter, Router, Switch} from 'react-router-dom';
-import HelloMessage from './HelloMessage';
-import Teste from './paginas/Teste';
 
-function Routes () {
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import HelloMessage from './paginas/Teste/HelloMessage';
+import ListarLivros2 from './paginas/Teste/Livro2';
+
+function Routes() {
     return (
         <BrowserRouter>
             <Switch>
-                <Router path='/' exact={true} component={HelloMessage}/>
-                <Router path='/teste' exact={true} component={Teste}/>
+                <Route path='/' exact={true} component={HelloMessage} />
+                <Route path='/livros' exact={true} component={ListarLivros2} />
             </Switch>
         </BrowserRouter>
     );

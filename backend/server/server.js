@@ -6,6 +6,7 @@ const cidadesRoute = require('./route/cidadeRoute');
 const clientesRoute = require('./route/clienteRoute');
 const ufsRoute = require('./route/ufsRoute');
 const enderecosRoute = require('./route/enderecoRoute');
+const cors = require('cors');
 
 // Documentação automática
 const swaggerUi = require('swagger-ui-express');
@@ -47,6 +48,7 @@ const options = {
 //const endpointsFiles = ['./route/citys/citysRoute.js'];
 
 app.use(express.json());
+app.use(cors());
 app.use(booksRoute);
 app.use(cidadesRoute);
 app.use(clientesRoute);

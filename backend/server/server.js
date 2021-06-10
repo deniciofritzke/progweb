@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const booksRoute = require('./route/livroRoute');
+const editoraRoute = require('./route/editoraRoute');
 const cidadesRoute = require('./route/cidadeRoute');
 const clientesRoute = require('./route/clienteRoute');
 const ufsRoute = require('./route/ufsRoute');
@@ -50,6 +51,7 @@ const options = {
 app.use(express.json());
 app.use(cors());
 app.use(booksRoute);
+app.use(editoraRoute);
 app.use(cidadesRoute);
 app.use(clientesRoute);
 app.use(ufsRoute);

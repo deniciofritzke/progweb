@@ -14,7 +14,7 @@ router.get('/livro/:id', async function (req, res) {
 });
 
 router.delete('/livro/:id', async function (req, res) {
-    const livro = await livroService.deleteLivro(res.params.id);
+    const livro = await livroService.deleteLivro(req.params.id);
     res.json([{ message: 'Livro excluído com sucesso!' }]);
 });
 

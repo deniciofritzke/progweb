@@ -19,6 +19,16 @@ npm init -y             // Cria arquivo package.json
 npm install express     // Instalação do pacote express
 npm install nodemon     // instala nodemon -> recarrega a página automática.
 
+React
+-----
+create-react-app
+react-scripts
+react-router-dom
+axios
+@material-ui/core
+@material-ui/icons
+
+
 
 
 fim = (ini + n) % tam

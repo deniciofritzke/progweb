@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 export default function CadastrarLivro() {
   const classes = useStyles();
 
-  const [editora, setEditoras] = useState([]);
+  const [editoras, setEditoras] = useState([]);
 
   useEffect(() => {
     api.get('editoras', {}).then(response => {
@@ -126,7 +126,12 @@ export default function CadastrarLivro() {
                     label="Editora"
                     id="editoralivro"
                     autoComplete="Editora"
-                />
+                >
+                    {editoras.map(editora => (
+                        <MenuItem value={editora.edi_codigo}>{editora.edi_nome}</MenuItem>
+                    ))}
+                    
+                </Select>
             </Grid>
           </Grid>
           <Button

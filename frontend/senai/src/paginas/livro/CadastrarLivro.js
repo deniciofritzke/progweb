@@ -6,12 +6,15 @@ import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import BookRouded from '@material-ui/icons/BookRounded';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import api from '../services/api';
-import { Select } from '@material-ui/core';
+import {InputLabel, Select} from '@material-ui/core';
+import MenuItem from '@material-ui/core/MenuItem';
+
+import SaveIcon from '@material-ui/icons/Save';
+import BookRouded from '@material-ui/icons/BookRounded';
 
 function Copyright() {
   return (
@@ -49,10 +52,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const onSubmitLivro = async (e) => {
+  e.preventDefault();
+  console.log(e.target[0]);
+}
+
 export default function CadastrarLivro() {
   const classes = useStyles();
-
   const [editoras, setEditoras] = useState([]);
+  const [edit, setEditora] = useState([]);
+  
+  const onChangeEditora = (event) => {
+    setEditora(event.target.value);
+  };
 
   useEffect(() => {
     api.get('editoras', {}).then(response => {
@@ -70,7 +82,7 @@ export default function CadastrarLivro() {
         <Typography component="h1" variant="h5">
           Livro
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} noValidate onSubmit={onSubmitLivro}>
           <Grid container spacing={1}>
             <Grid item xs={12}>
               <TextField
@@ -115,23 +127,28 @@ export default function CadastrarLivro() {
                 label="ISBN"
                 id="isbnlivro"
                 autoComplete="ISBN"
+                inputProps={{
+                  maxLength: 13,
+                }}
               />
             </Grid>
             <Grid item xs={12}>
-                <Select
-                    variant="outlined"
-                    required
-                    fullWidth
-                    name="editoralivro"
-                    label="Editora"
-                    id="editoralivro"
-                    autoComplete="Editora"
-                >
-                    {editoras.map(editora => (
-                        <MenuItem value={editora.edi_codigo}>{editora.edi_nome}</MenuItem>
-                    ))}
-                    
-                </Select>
+              <InputLabel id="select-label-editoras">Editora</InputLabel>
+              <Select
+                  variant="outlined"
+                  required
+                  fullWidth
+                  name="editoralivro"
+                  labelId="select-label-editoras"
+                  id="editoralivro"
+                  autoComplete="Editora"
+                  value={edit}
+                  onChange={onChangeEditora}
+              >
+                {editoras.map(editora => (
+                  <MenuItem value={editora.edi_codigo}>{editora.edi_nome}</MenuItem>
+                ))}
+              </Select>
             </Grid>
           </Grid>
           <Button
@@ -140,8 +157,9 @@ export default function CadastrarLivro() {
             variant="contained"
             color="primary"
             className={classes.submit}
+            startIcon={<SaveIcon />}
           >
-            Cadastrar
+            Salvar
           </Button>
         </form>
       </div>

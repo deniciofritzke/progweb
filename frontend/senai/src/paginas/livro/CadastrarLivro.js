@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -7,10 +7,10 @@ import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import {makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import api from '../services/api';
-import {InputLabel, Select} from '@material-ui/core';
+import { InputLabel, Select } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 
 import SaveIcon from '@material-ui/icons/Save';
@@ -54,23 +54,23 @@ const useStyles = makeStyles((theme) => ({
 
 const onSubmitLivro = async (e) => {
   e.preventDefault();
-  console.log(e.target[0]);
+  console.log(e.target);
 }
 
 export default function CadastrarLivro() {
   const classes = useStyles();
   const [editoras, setEditoras] = useState([]);
   const [edit, setEditora] = useState([]);
-  
+
   const onChangeEditora = (event) => {
     setEditora(event.target.value);
   };
 
   useEffect(() => {
     api.get('editoras', {}).then(response => {
-        setEditoras(response.data);
-        });
-    }, []);
+      setEditoras(response.data);
+    });
+  }, []);
 
   return (
     <Container component="main" maxWidth="xs">
@@ -119,7 +119,7 @@ export default function CadastrarLivro() {
               />
             </Grid>
             <Grid item xs={12}>
-            <TextField
+              <TextField
                 variant="outlined"
                 required
                 fullWidth
@@ -135,15 +135,15 @@ export default function CadastrarLivro() {
             <Grid item xs={12}>
               <InputLabel id="select-label-editoras">Editora</InputLabel>
               <Select
-                  variant="outlined"
-                  required
-                  fullWidth
-                  name="editoralivro"
-                  labelId="select-label-editoras"
-                  id="editoralivro"
-                  autoComplete="Editora"
-                  value={edit}
-                  onChange={onChangeEditora}
+                variant="outlined"
+                required
+                fullWidth
+                name="editoralivro"
+                labelId="select-label-editoras"
+                id="editoralivro"
+                autoComplete="Editora"
+                value={edit}
+                onChange={onChangeEditora}
               >
                 {editoras.map(editora => (
                   <MenuItem value={editora.edi_codigo}>{editora.edi_nome}</MenuItem>
